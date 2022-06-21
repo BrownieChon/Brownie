@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>มาระบายกันหน่อย</title>
+</head>
+<body>
+    <div>
+        <section>
+            <h1> เพราะเพื่อนทุกคนมีความในใจ </h1>
+            <button><a href="message/">มาระบายกันหน่อย</a></button> 
+            <button><a href="/">กลับไปหน้าแรก</a></button>
+        </section>
+        <style>
+            .message{
+                background-color: gray;
+                padding: 10px;
+                margin: 10px;
+                border-radius: 10px;
+            }
+            .name{
+                font-size: 20px;
+                color: aqua;
+                margin-bottom: 5px;
+            }
+            .text{
+                color: white;
+                font-size: 16px;
+                margin-top: 5px;
+            }
+            .head{
+                font-size: 30px;
+                text-align: center;
+            }
+        </style>
+    </div>
+
+    <div>
+        <section>
+            <p class="head">ดูซิมีใครระบายอะไรกันบ้าง</p>
+            <div>
+                {% for x in myrelax %}
+                <div class="message">
+                    <p class="name">{{x.name}}</p><br>
+                    <p class="text">{{x.message}}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        
+    </div>
+
+    
+
+</body>
+</html>

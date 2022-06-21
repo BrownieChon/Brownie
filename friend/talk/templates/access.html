@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>มาระบายกันหน่อย</title>
+</head>
+<body>
+    <div>
+        <section>
+            <h1> เพราะเพื่อนทุกคนมีความในใจ </h1>
+        </section>
+    </div>
+
+    <div>
+        <section>
+            ลองระบายมาสิ
+        </section>
+        <section>
+            {% if status == 1 %}
+            ยินดีต้อนรับ
+            {% for x in myrelax %}
+            <p>สวัสดี {{x.user}} </p><br>
+            {% endfor %}
+            
+            <p>สิ่งที่คุณอยากจะระบาย : <textarea name="message" rows="10" cols="50"></textarea> <br><br></p>
+            {% endif %}
+
+            
+        </section>
+        <button><a href="/">กลับไปหน้าแรก</a></button>
+        
+    </div>
+
+    
+
+</body>
+</html>

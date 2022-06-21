@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>มาคุยกันได้นะ</title>
+    <style>
+        .message{
+            background-color: gray;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .name{
+            font-size: 20px;
+            color: aqua;
+            margin-bottom: 5px;
+        }
+        .text{
+            color: white;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        .head{
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <section>
+            <h1> เพราะเพื่อนทุกคนต้องการกำลังใจ </h1>
+            {% if status == 0 %}
+            <p class="text-center">เป็นเพื่อนกันอยู่แล้วเหรอ ? <a href="login/">เข้าสู่ระบบ</a> ได้เลย</p>
+            {% endif %}
+
+            {% if status == 1 %}
+            ยินดีต้อนรับ
+            {% for x in myrelax %}
+            <p>สวัสดี {{x.user}} </p><br>
+            {% endfor %}
+
+            <form action="comment/" method="POST">
+            {% csrf_token %}
+            ชื่อที่ใช้แสดง <input type="text" name="user">  
+            <p>สิ่งที่คุณอยากจะระบาย : <textarea name="message" rows="10" cols="50"></textarea> </p>
+            <input type="submit" value="Submit">
+            <br><br>
+            </form>
+            
+            {% endif %}
+
+            
+            <!-- <script> popup
+
+            </script> -->
+
+            <button><a href="register/">มาพูดคุยกันได้นะ</a></button> 
+            <button><a href="/">กลับไปหน้าแรก</a></button>
+        </section>
+       
+    </div>
+
+    <div>
+        <section>
+            <p class="head">มาดูว่าเราคุยอะไรกับเพื่อนๆ บ้าง</p>
+            <div>
+                {% for x in board %}
+                <div class="message">
+                    <p class="name">{{x.user}}</p><br>
+                    <p class="text">{{x.message}}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        
+    </div>
+
+    
+
+</body>
+</html>
